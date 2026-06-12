@@ -1,0 +1,42 @@
+services:
+  owm-mosquitto:
+    image: eclipse-mosquitto:2.0
+    container_name: owm-mosquitto
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - mosquitto-data:/mosquitto/data
+    restart: unless-stopped
+
+  owm-opensearch:
+    image: opensearchproject/opensearch:2.13.0
+    container_name: owm-opensearch
+    environment:
+      - discovery.type=single-node
+      - plugins.security.disabled=true
+      - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "OPENSEARCH_INITIAL_ADMIN_PASSWORD=OilWell#Monitor2026"
+    ports:
+      - "9200:9200"
+      - "9600:9600"
+    volumes:
+      - opensearch-data:/usr/share/opensearch/data
+    restart: unless-stopped
+
+  owm-dashboards:
+    image: opensearchproject/opensearch-dashboards:2.13.0
+    container_name: owm-dashboards
+    ports:
+      - "5601:5601"
+    environment:
+      - OPENSEARCH_HOSTS=["http://owm-opensearch:9200"]
+      - DISABLE_SECURITY_DASHBOARDS_PLUGIN=true
+    depends_on:
+      - owm-opensearch
+    restart: unless-stopped
+
+volumes:
+  mosquitto-data:
+  opensearch-data:

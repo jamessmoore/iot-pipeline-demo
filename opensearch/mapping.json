@@ -1,0 +1,23 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0,
+    "refresh_interval": "1s"
+  },
+  "mappings": {
+    "properties": {
+      "device_id": { "type": "keyword" },
+      "location_name": { "type": "text" },
+      "field_name": { "type": "keyword" },
+      "operator": { "type": "keyword" },
+      "location": { "type": "geo_point" },
+      "tank_level_pct": { "type": "float" },
+      "temperature_f": { "type": "float" },
+      "pressure_psi": { "type": "float" },
+      "flow_rate_bpd": { "type": "float" },
+      "status": { "type": "keyword" },
+      "alert": { "type": "keyword" },
+      "timestamp": { "type": "date" }
+    }
+  }
+}

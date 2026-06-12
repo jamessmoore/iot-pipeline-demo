@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Monitaur — telemetry simulator.
+"""IOT-pipeline-demo — telemetry simulator.
 
 Publishes simulated ESP32 sensor readings to an MQTT broker on
 ``sensors/{device_id}/data`` for 10 Texas well locations.
@@ -207,7 +207,7 @@ def run_once(client, well_id, scenario_name):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Monitaur telemetry simulator")
+    parser = argparse.ArgumentParser(description="IOT-pipeline-demo telemetry simulator")
     parser.add_argument("--well", help="device_id of the well to target, e.g. well-tx-003")
     parser.add_argument("--scenario", choices=sorted(SCENARIOS.keys()), help="scenario to apply to --well")
     parser.add_argument("--once", action="store_true", help="publish a single snapshot then exit")

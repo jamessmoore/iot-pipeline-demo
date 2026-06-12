@@ -7,7 +7,7 @@ export default function StatusBar({ wells, lastUpdate }) {
   return (
     <div className="absolute top-4 left-4 z-10 flex items-center gap-4 rounded-lg border border-border bg-surface/90 px-4 py-2 shadow-lg backdrop-blur">
       <span className="font-display text-sm font-semibold text-text-primary">
-        Monitaur
+        IOT-pipeline-demo
       </span>
       <span className="text-xs text-text-muted">
         {total} wells online

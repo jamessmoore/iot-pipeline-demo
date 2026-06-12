@@ -2,7 +2,7 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 import './globals.css';
 
 export const metadata = {
-  title: 'Monitaur',
+  title: 'IOT-pipeline-demo',
   description: 'Real-time telemetry dashboard for Texas oil well tanks',
 };
 

@@ -4,6 +4,8 @@ A full-stack IoT telemetry pipeline that simulates ESP32-based oil well tank mon
 
 This is a portfolio/demo project — not a production system or client deliverable.
 
+![Tests](https://github.com/jamessmoore/iot-pipeline-demo/actions/workflows/test.yml/badge.svg)
+
 ## Architecture
 
 ```

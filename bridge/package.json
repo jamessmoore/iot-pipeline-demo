@@ -4,10 +4,14 @@
   "description": "MQTT subscriber that indexes oil well telemetry into OpenSearch",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "vitest run"
   },
   "dependencies": {
     "@opensearch-project/opensearch": "^2.6.0",
     "mqtt": "^5.0.0"
+  },
+  "devDependencies": {
+    "vitest": "^4.1.9"
   }
 }
